@@ -8,3 +8,10 @@ This project is part of the material of the book
    David J. Barnes and Michael Kölling
 
 It is discussed in chapter 7.
+
+
+
+************************ Questions ************************
+Q27: Yes it is
+Q28: It's used to reset all cells to 0
+Q29: Yes different patterns emerge now and tey are deterministic
