@@ -46,17 +46,19 @@ public class Automaton
      */
     public void update()
     {
+     int[] nextState = new int[state.length];
      int left = 0;
      int center = state[0];
      for(int i = 0; i < state.length; i++) {
          int right = (i + 1 < state.length) ? state [i + 1] : 0;
-         int newValue = (left + center + right) %2;
+         int newValue = calculateNextState(left, center, right);
+         nextState[i] = newValue;
          //this updates the left and center before overwriting state [i]
          left = center;
          center = right;
          state[i] = newValue;
      }
-    
+     state = nextState;
     }
     /**
      * Reset the automaton.
@@ -67,4 +69,12 @@ public class Automaton
         // Seed the automaton with a single 'on' cell.
         state[numberOfCells / 2] = 1;
     }
+    
+    /**
+     * Calculate the next state of a cell based on it's neighbors
+     */
+    public int calculateNextState(int left, int center, int right) {
+        return (left + center + right) % 2;
+    }
+
 }
