@@ -18,3 +18,5 @@ Q29: Yes different patterns emerge now and tey are deterministic
 Q31: Because I would have updated state [i] directly inside the loop it would cause interferences during updates so this avoids it, by changing it has a great potential to cause more problems.
 Q32: I think personally the nextstate is better because it's simpler clearer and it has a safe update rule that shouldn't cause problems
 //I did question 32 and 33 in the same step
+Q35: Each cell state depends on the three binary imputs which means there can only be 256 different ways
+

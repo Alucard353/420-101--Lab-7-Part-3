@@ -47,16 +47,16 @@ public class Automaton
     public void update()
     {
      int[] nextState = new int[state.length];
+     int[] extendedState = new int[state.length + 1];
+     System.arraycopy(state, 0, extendedState, 0, state.length);
+
      int left = 0;
-     int center = state[0];
+     int center = extendedState[0];
      for(int i = 0; i < state.length; i++) {
-         int right = (i + 1 < state.length) ? state [i + 1] : 0;
-         int newValue = calculateNextState(left, center, right);
-         nextState[i] = newValue;
-         //this updates the left and center before overwriting state [i]
+         int right = extendedState[i +1];
+         state[i] = calculateNextState(left, center, right);
          left = center;
          center = right;
-         state[i] = newValue;
      }
      state = nextState;
     }
