@@ -15,3 +15,5 @@ It is discussed in chapter 7.
 Q27: Yes it is
 Q28: It's used to reset all cells to 0
 Q29: Yes different patterns emerge now and tey are deterministic
+Q31: Because I would have updated state [i] directly inside the loop it would cause interferences during updates so this avoids it, by changing it has a great potential to cause more problems.
+
